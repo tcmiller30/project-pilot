@@ -1,24 +1,21 @@
 const router = require('express').Router();
 const { User, Project } = require('../models');
+const withAuth = require('../utils/auth');
 
 //Login Page that will contain the sign in/up form
 router.get('/', async (req, res) => {
 try {
     // Getting the card that shows the project and grabs users name and due date.
     const projectCards = await Project.findAll({
-        attributes:  [title, description, hours ],
-        include: [
-            {
-                model: User,
-                attributes: [name, email],
-            },
-        ],
-    }),
+        attributes: [title, description, project_created, clientName],
+
+    });
     // Create a new array for all the projects need to add
     const allProjects = projectCards.map((project) => project.get({ plain: true }));
     res.render('home', {
-        // Need authrotized js to know if theyre logged in
-        : req.session.//logged in variable from ^
+        allProjects,
+    // Need authrotized js to know if theyre logged in
+    //   logged_in : req.session.logged_in
     })
 } catch (error) {
     res.status(500).json(error);
@@ -29,26 +26,23 @@ try {
 router.get('/project/:id', async (req, res) => {
  try {
     const singleProject = await Project.findByPk(req.params.id, {
-        attributes: [//title, due date, creation date, hours spent, income?],
-        include: [
-            {
-                model: User,
-                attributes: [//name]
-            }
-        ]
-    }),
+        attributes: [title, description, project_created, clientName, project_due, hours, rate],
+    });
 
     const project = singleProject.get({ plain: true });
 
-    res,render('project', {
+    res.render('project', {
         ...project,
        // Need authrotized js to know if theyre logged in
-       : req.session.//logged in variable from ^
+    //   logged_in: req.session.logged_in
     });
  } catch (error) {
     res.status(500).json(error)
  }
 });
+
+module.exports = router;
+
 
 
 
