@@ -15,7 +15,7 @@ try {
     res.render('home', {
         allProjects,
     // Need authrotized js to know if theyre logged in
-    //   logged_in : req.session.logged_in
+    //   user_id : req.session.user_id
     })
 } catch (error) {
     res.status(500).json(error);
@@ -34,7 +34,7 @@ router.get('/project/:id', async (req, res) => {
     res.render('project', {
         ...project,
        // Need authrotized js to know if theyre logged in
-    //   logged_in: req.session.logged_in
+    //   user_id: req.session.user_id
     });
  } catch (error) {
     res.status(500).json(error)
