@@ -15,6 +15,10 @@ Project.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    clientName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        },
     description: {
       type: DataTypes.STRING,
     },
