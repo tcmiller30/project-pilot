@@ -1,4 +1,4 @@
-# Name of Project
+# Project Pilot
 #### Aubrey Johnston, Daniel Hernandez, Scarlet Bowen, Danny Ngyuen, Travis Miller
 <br>
 
