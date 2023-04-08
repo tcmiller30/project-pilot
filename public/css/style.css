@@ -62,7 +62,8 @@ body{
 
 
 .outline{
-  border: 10px solid var(--gold);
+  border: 10px solid var(--blue);
+  box-shadow: 0px 0px 0px 5px var(--gold);
 }
 
 .project-title{
