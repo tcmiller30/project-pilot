@@ -1,21 +1,27 @@
 [
     {
       "title": "My Project 1",
+      "clientName": "Daniel",
       "description": "This is my first project!",
+      "project_created": "April 7, 2023",
       "project_due": "May 11, 2023",
       "hours": "85",
       "rate": "25"
     },
     {
         "title": "My Project 2",
+        "clientName": "Steve",
         "description": "This is my secod project!",
+        "project_created": "April 8, 2023",
         "project_due": "June 14, 2023",
         "hours": "105",
         "rate": "30"
       },
       {
         "title": "My Project 3",
+        "clientName": "Scarlet",
         "description": "This is my third project!",
+        "project_created": "April 9, 2023",
         "project_due": "December 23, 2023",
         "hours": "60",
         "rate": "20"
