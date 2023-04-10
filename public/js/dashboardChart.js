@@ -1,4 +1,4 @@
-const ctx = document.getElementById('dashboardChart');
+const dashboardChart = document.getElementById('dashboardChart');
 
 const data = [
     { year: 2010, count: 10 },
@@ -10,7 +10,7 @@ const data = [
     { year: 2016, count: 28 },
 ];
         
-new Chart(ctx, {
+new Chart(dashboardChart, {
     type: 'bar',
     options: {
         animation: false,
@@ -39,3 +39,4 @@ new Chart(ctx, {
         }
     }
 });
+
