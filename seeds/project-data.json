@@ -1,6 +1,7 @@
 [
     {
       "title": "My Project 1",
+      "clientName": "Daniel",
       "description": "This is my first project!",
       "project_due": "May 11, 2023",
       "hours": "85",
@@ -8,6 +9,7 @@
     },
     {
         "title": "My Project 2",
+        "clientName": "Steve",
         "description": "This is my secod project!",
         "project_due": "June 14, 2023",
         "hours": "105",
@@ -15,6 +17,7 @@
       },
       {
         "title": "My Project 3",
+        "clientName": "Scarlet",
         "description": "This is my third project!",
         "project_due": "December 23, 2023",
         "hours": "60",
