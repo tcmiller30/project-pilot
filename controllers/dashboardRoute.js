@@ -43,6 +43,22 @@ router.get('/project/:id', withAuth, async (req, res) => {
  }
 });
 
+router.get('/', async (req, res) => {
+    try {
+        if(req.session.loggedIn) {
+            res.redirect('/dashboard');
+            return
+        } else {
+            res.render('login')
+        }
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+
+
+
 module.exports = router;
 
 
