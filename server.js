@@ -11,9 +11,14 @@ const sequelize = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const hbs = exphbs.create({ helpers });
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars')
+
 // middleware mounting
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
@@ -45,5 +50,6 @@ app.use(routes);
 
 // establish sequelize connection
 sequelize.sync({ force: false}).then(() => {
+
   app.listen(PORT, () => console.log('Now listening'));
 });
