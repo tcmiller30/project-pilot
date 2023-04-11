@@ -9,15 +9,8 @@
     <main class="container bg-transparent">
         <secton id="projectCards" class="row d-flex justify-content-center">
             {{#if projects.length}}         
-            {{#each projects as |project|}}
-                <div class="card mb-3 mx-1 text-center card-outline">
-                    <div class="card-header">
-                        <h3 class="project-title">{{project.projectName}}</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>{{project.projectDescription}}</p>
-                        <a href="/project/{{project.id}}"><button class="btn btn-primary ">View Project</button></a>
-                </div>
+                {{#each projects as |project|}}
+                    {{> project-details}}
                 {{/each}}
             {{/if}}
         </secton>
