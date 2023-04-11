@@ -1,27 +1,25 @@
 <header>
     <h1 class="text-center">Project Title</h1>
     {{!-- button to create new project --}}
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#projectModal">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal">
         Create New Project
     </button>
 </header>
-<main class="container">
-
-       <!-- Project Cards List --> 
+    <!-- Project Cards List --> 
     <main class="container bg-transparent">
         <secton id="projectCards" class="row d-flex justify-content-center">
-{{#if projects.length}}         
-{{#each projects as |project|}}
-    <div class="card mb-3 mx-1 text-center card-outline">
-        <div class="card-header">
-            <h3 class="project-title">{{project.projectName}}</h3>
-        </div>
-        <div class="card-body">
-            <p>{{project.projectDescription}}</p>
-            <a href="/project/{{project.id}}"><button class="btn btn-primary ">View Project</button></a>
-    </div>
-    {{/each}}
-{{/if}}
+            {{#if projects.length}}         
+            {{#each projects as |project|}}
+                <div class="card mb-3 mx-1 text-center card-outline">
+                    <div class="card-header">
+                        <h3 class="project-title">{{project.projectName}}</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>{{project.projectDescription}}</p>
+                        <a href="/project/{{project.id}}"><button class="btn btn-primary ">View Project</button></a>
+                </div>
+                {{/each}}
+            {{/if}}
         </secton>
      </main>   
         <!-- Modal -->
