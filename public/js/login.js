@@ -1,20 +1,20 @@
 async function loginHandler(event) {
     event.preventDefault();
-    const userEmail = document.querySelector('#loginEmail');
-    const userPassword = document.querySelector('#loginPassword');
-
+    const userEmail = document.querySelector('#loginEmail').value;
+    const userPassword = document.querySelector('#loginPassword').value;
+    console.log(userEmail, userPassword)
     if (userEmail && userPassword) {
         const response = await fetch('/api/users/login', {
             method: 'POST',
             body: JSON.stringify({
-                username,
-                password
+                userEmail,
+                userPassword
             }),
             headers: {'Content-Type': 'application/json'}
         });
 
         if(response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/');
         } else {
             console.log(await response.json());
             alert(response.statusText);
@@ -30,8 +30,8 @@ async function signupHandler(event) {
     const email = document.querySelector('#signupEmail').value.trim();
     const password = document.querySelector('#signupPassword').value.trim();
     const name = document.querySelector('#signupName').value.trim();
-
-    if(username && password) {
+    console.log(email, password, name)
+    if(name && password && email) {
         const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({
@@ -50,7 +50,6 @@ async function signupHandler(event) {
     }
 };
 
-console.log("Hello World")
 
 
 

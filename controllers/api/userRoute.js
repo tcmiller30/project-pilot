@@ -38,29 +38,31 @@ router.get('/:id', async (req, res) => {
 
 
 
-router.post('/login', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
+    console.log(req.body)
     const createUser = await User.create({
       ...req.body,
-      id: req.session.id
     })
     res.status(200).json(createUser)
   } catch (err) {
     console.log(err)
+    res.status(400).json({})
   }
 });
 
 
 router.post('/login', async (req, res) => {
     try {
-      const userData = await User.findOne({ where: { email: req.body.email } });
+      console.log(req.body)
+      const userData = await User.findOne({ where: { email: req.body.userEmail } });
   
       if (!userData) {
         res.status(400).json({ message: 'Incorrect email or password, please try again' });
         return;
       }
   
-      const validPassword = await userData.checkPassword(req.body.password);
+      const validPassword = await userData.checkPassword(req.body.userPassword);
   
       if (!validPassword) {
         res.status(400).json({ message: 'Incorrect email or password, please try again' });
@@ -75,6 +77,7 @@ router.post('/login', async (req, res) => {
       });
   
     } catch (err) {
+      console.log(err)
       res.status(400).json(err);
     }
   });
