@@ -50,6 +50,8 @@ async function signupHandler(event) {
     }
 };
 
+console.log("Hello World")
+
 
 
 document.querySelector('.login-form').addEventListener('submit', loginHandler);
