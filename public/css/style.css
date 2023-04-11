@@ -62,6 +62,9 @@ body{
   border: 10px solid var(--blue);
   box-shadow: 0px 0px 0px 5px var(--gold);
 }
+.card-outline{
+  border: 5px solid var(--blue);
+}
 
 .project-title{
   text-decoration: underline;
@@ -73,8 +76,8 @@ body{
 
 .logout-btn{
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
 }
 .page-title{
   text-align: center;
