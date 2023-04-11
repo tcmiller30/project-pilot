@@ -70,8 +70,13 @@ body{
 .hidden{
   display: none;
 }
+
 .logout-btn{
   position: fixed;
   top: 0;
   right: 0;
+}
+.page-title{
+  text-align: center;
+  margin: 20px;
 }
