@@ -54,5 +54,5 @@ console.log("Hello World")
 
 
 
-document.querySelector('.login-form').addEventListener('submit', loginHandler);
-document.querySelector('.new-acc-form').addEventListener('submit', signupHandler);
+document.querySelector('#pills-login').addEventListener('submit', loginHandler);
+document.querySelector('#pills-signup').addEventListener('submit', signupHandler);
