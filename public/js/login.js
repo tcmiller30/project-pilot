@@ -1,6 +1,5 @@
 async function loginHandler(event) {
     event.preventDefault();
-//                                            wait for what id travis makes
     const userEmail = document.querySelector('#loginEmail');
     const userPassword = document.querySelector('#loginPassword');
 
@@ -28,7 +27,6 @@ async function loginHandler(event) {
 
 async function signupHandler(event) {
     event.preventDefault();
-//                                           wait for what id travis makes
     const email = document.querySelector('#signupEmail').value.trim();
     const password = document.querySelector('#signupPassword').value.trim();
     const name = document.querySelector('#signupName').value.trim();
