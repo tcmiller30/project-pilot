@@ -1,13 +1,4 @@
 const dashboardChart = document.getElementById("dashboardChart");
-// const { Project } = require("../../models");
-Chart.defaults.datasets.backgroundColor = [
-  "#6aa2b8",
-  "#c6beb5",
-  "#1b3d6d",
-  " #f78d2d",
-  "#f7eb5f",
-  "#7ab800",
-];
 
 const data = [
   { name: "Calc App", wage: 15, hours: 10 },
