@@ -15,53 +15,56 @@
     <header>
         <h1 class="text-center">Project Title</h1>
     </header>
-    <main class="container">
+    
         <!-- Project Overview Charts -->
-        <figure class="text-center outline">
-            <img class="mx-auto" src="../images/graph-example.png">
+        <figure class="mx-auto bg-white outline w-50">
+            <canvas id="dashboardChart"></canvas>
         </figure>
+        <main class="container bg-none">
         <!-- Project Overview Charts -->
 
         <!-- Project Cards List -->
         <secton id="projectCards" class="row d-flex justify-content-center">
-            <div class="card mb-3 text-center">
+            <div class="card mb-3 mx-1 text-center">
                 <div class="card-header">
-                    <h3>Project Title</h3>
+                    <h3 class="project-title">Project Title</h3>
                 </div>
                 <div class="card-body">
                     <p>Project Description</p>
                     <button class="btn btn-primary ">View Project</button>
                 </div>
             </div>
-            <div class="card mb-3 text-center">
+            <div class="card mb-3 mx-1 text-center">
                 <div class="card-header">
-                    <h3>Project Title</h3>
+                    <h3 class="project-title">Project Title</h3>
                 </div>
                 <div class="card-body">
                     <p>Project Description</p>
-                    <button class="btn btn-primary ">View Project</button>
+                    <button class="btn btn-primary">View Project</button>
                 </div>
             </div>
-            <div class="card mb-3 text-center">
+            <div class="card mb-3 mx-1 text-center">
                 <div class="card-header">
-                    <h3>Project Title</h3>
+                    <h3 class="project-title">Project Title</h3>
                 </div>
                 <div class="card-body">
                     <p>Project Description</p>
-                    <button class="btn btn-primary ">View Project</button>
+                    <button class="btn btn-primary">View Project</button>
                 </div>
             </div>
-            <div class="card mb-3 text-center">
+            <div class="card mb-3 mx-1 text-center">
                 <div class="card-header">
-                    <h3>Project Title</h3>
+                    <h3 class="project-title">Project Title</h3>
                 </div>
                 <div class="card-body">
                     <p>Project Description</p>
-                    <button class="btn btn-primary ">View Project</button>
+                    <button class="btn btn-primary">View Project</button>
                 </div>
             </div>
             
         </secton>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/dashboardChart.js"></script>
 </body>
 </html>
