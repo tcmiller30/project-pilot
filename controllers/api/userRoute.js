@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
             attributes: {exclude: ['password']}
         })
         if(!singleUser) {
-            res.status(404).json({ message: 'Thre is no User with this ID'})
+            res.status(404).json({ message: 'There is no User with this ID'})
         } else {
             res.status(200).json(singleUser)
         }
@@ -45,11 +45,6 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-// router.post('/', async (req, res) => {
-//     try {
-
-//     }
-// })
 
 
 
