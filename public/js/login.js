@@ -29,15 +29,17 @@ async function loginHandler(event) {
 async function signupHandler(event) {
     event.preventDefault();
 //                                           wait for what id travis makes
-    const username = document.querySelector('#create-username').value.trim();
+    const email = document.querySelector('#create-email').value.trim();
     const password = document.querySelector('#create-password').value.trim();
+    const name = document.querySelector('#create-name').value.trim();
 
     if(username && password) {
         const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({
-                username,
-                password
+                email,
+                password,
+                name
             }),
             headers: {'Content-Type': 'application/json'}
         });
