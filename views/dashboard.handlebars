@@ -1,84 +1,79 @@
 <header>
     <h1 class="text-center">Project Title</h1>
     {{!-- button to create new project --}}
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#projectModal">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal">
         Create New Project
     </button>
 </header>
-<main class="container">
-
-    <!-- Project Overview Charts -->
-    <figure class="text-center outline">
-        <img class="mx-auto" src="../images/graph-example.png">
-    </figure>
-    <!-- Project Overview Charts -->
-
-    <!-- Display Existing Projects -->
-    <section id="projectCards" class="row">
-  {{#if projects.length}}
-  <div class="">
-    <h3>Current Projects:</h3>
-
-    {{#each projects as |project|}}
-        <div class="row mb-2">
-            {{> project-details}}
-        {{!-- <div class="col-md-4">
-            <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-        </div> --}}
-        </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
-    </section>
-
-    <!-- Modal -->
-    <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModalLabel">Create New Project</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
+    <!-- Project Cards List --> 
+    <main class="container bg-transparent">
+        <secton id="projectCards" class="row d-flex justify-content-center">
+            {{#if projects.length}}         
+            {{#each projects as |project|}}
+                <div class="card mb-3 mx-1 text-center card-outline">
+                    <div class="card-header">
+                        <h3 class="project-title">{{project.projectName}}</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>{{project.projectDescription}}</p>
+                        <a href="/project/{{project.id}}"><button class="btn btn-primary ">View Project</button></a>
                 </div>
-                <div class="modal-body">
-                    <form id="projectForm">
-                        <div class="form-group">
-                            <label for="projectName">Project Name</label>
-                            <input type="text" class="form-control" id="projectName" name="projectName">
-                        </div>
-                        <div class="form-group">
-                            <label for="clientName">Client Name</label>
-                            <input type="text" class="form-input" id="clientName" name="clientName"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="projectDescription">Project Description</label>
-                            <textarea class="form-input" id="projectDescription" name="projectDescription"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="projectDue">Project Due</label>
-                            <input type="date" class="form-input" id="projectDue" name="projectDue"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="projectHours">Billable Hours</label>
-                            <input type="number" class="form-input" id="projectHours" name="projectHours"></input>
-                        </div>
-                        <div class="form-group">
-                            <label for="projectRate">Project Rate</label>
-                            <input type="number" class="form-input" id="projectRate" name="projectRate"></input>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="saveProject">Save Project</button>
+                {{/each}}
+            {{/if}}
+        </secton>
+     </main>   
+        <!-- Modal -->
+        <section class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModalLabel">Create New Project</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="projectForm">
+                            <div class="form-group">
+                                <label for="projectName">Project Name</label>
+                                <input type="text" class="form-control" id="projectName" name="projectName">
+                            </div>
+                            <div class="form-group">
+                                <label for="clientName">Client Name</label>
+                                <input type="text" class="form-input" id="clientName" name="clientName"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectDescription">Project Description</label>
+                                <textarea class="form-input" id="projectDescription" name="projectDescription"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectDue">Project Due</label>
+                                <input type="date" class="form-input" id="projectDue" name="projectDue"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectHours">Billable Hours</label>
+                                <input type="number" class="form-input" id="projectHours" name="projectHours"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectRate">Project Rate</label>
+                                <input type="number" class="form-input" id="projectRate" name="projectRate"></input>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveProject">Save Project</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</main>
+        </section>
+        <!-- Modal -->
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script src="../js/createProject.js"></script>
+    <script src="../js/dashboardChart.js"></script>
