@@ -27,13 +27,11 @@ body{
   margin: 20px;
 }
   
-  
 .btn-primary:hover {
   color: var(--gold);
   background-color: var(--blue-dark);
   border-color: var(--blue-dark);
 }
-  
   
 .nav-pills{
   
@@ -60,7 +58,6 @@ body{
   background-color: var(--blue);
 }
 
-
 .outline{
   border: 10px solid var(--blue);
   box-shadow: 0px 0px 0px 5px var(--gold);
@@ -72,4 +69,9 @@ body{
 
 .hidden{
   display: none;
+}
+.logout-btn{
+  position: fixed;
+  top: 0;
+  right: 0;
 }
