@@ -13,19 +13,27 @@
 </head>
 <body>
     <header>
-        <h1 class="text-center">Project Title</h1>
+        <h1 class="page-title mx-auto my-3 p-2 w-25 bg-white outline">Project Title</h1>
+        <button class="btn btn-primary logout-btn">Logout</button>
     </header>
-    
-        <!-- Project Overview Charts -->
-        <figure class="mx-auto bg-white outline w-50">
+        <!-- Project Overview Chart -->
+        <figure class="mx-auto my-1 bg-white outline w-50">
             <canvas id="dashboardChart"></canvas>
         </figure>
-        <main class="container bg-none">
-        <!-- Project Overview Charts -->
+        <!-- /Project Overview Chart -->
 
-        <!-- Project Cards List -->
+        <!-- Modal Button -->
+        <div class="text-center">
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#projectModal">
+            Create New Project
+            </button> 
+        </div>
+        <!-- /Modal Button -->
+
+       <!-- Project Cards List --> 
+    <main class="container bg-transparent">
         <secton id="projectCards" class="row d-flex justify-content-center">
-            <div class="card mb-3 mx-1 text-center">
+            <div class="card mb-3 mx-1 text-center card-outline">
                 <div class="card-header">
                     <h3 class="project-title">Project Title</h3>
                 </div>
@@ -34,7 +42,7 @@
                     <button class="btn btn-primary ">View Project</button>
                 </div>
             </div>
-            <div class="card mb-3 mx-1 text-center">
+            <div class="card mb-3 mx-1 text-center card-outline">
                 <div class="card-header">
                     <h3 class="project-title">Project Title</h3>
                 </div>
@@ -43,16 +51,7 @@
                     <button class="btn btn-primary">View Project</button>
                 </div>
             </div>
-            <div class="card mb-3 mx-1 text-center">
-                <div class="card-header">
-                    <h3 class="project-title">Project Title</h3>
-                </div>
-                <div class="card-body">
-                    <p>Project Description</p>
-                    <button class="btn btn-primary">View Project</button>
-                </div>
-            </div>
-            <div class="card mb-3 mx-1 text-center">
+            <div class="card mb-3 mx-1 text-center card-outline">
                 <div class="card-header">
                     <h3 class="project-title">Project Title</h3>
                 </div>
@@ -63,8 +62,57 @@
             </div>
             
         </secton>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModalLabel">Create New Project</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="projectForm">
+                            <div class="form-group">
+                                <label for="projectName">Project Name</label>
+                                <input type="text" class="form-control" id="projectName" name="projectName">
+                            </div>
+                            <div class="form-group">
+                                <label for="clientName">Client Name</label>
+                                <input type="text" class="form-input" id="clientName" name="clientName"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectDescription">Project Description</label>
+                                <textarea class="form-input" id="projectDescription" name="projectDescription"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectDue">Project Due</label>
+                                <input type="date" class="form-input" id="projectDue" name="projectDue"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectHours">Billable Hours</label>
+                                <input type="number" class="form-input" id="projectHours" name="projectHours"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectRate">Project Rate</label>
+                                <input type="number" class="form-input" id="projectRate" name="projectRate"></input>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveProject">Save Project</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+
     </main>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/dashboardChart.js"></script>
+    <script src="../js/createProject.js"></script>
 </body>
 </html>
