@@ -7,8 +7,8 @@
     <!-- Project Cards List --> 
     <main class="container bg-transparent">
         <secton id="projectCards" class="row d-flex justify-content-center">
-            {{#if projects.length}}         
-                {{#each projects as |project|}}
+            {{#if allProjects.length}}         
+                {{#each allPprojects as |project|}}
                     {{> project-details}}
                 {{/each}}
             {{/if}}
