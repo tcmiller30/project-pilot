@@ -23,6 +23,7 @@ const newFormHandler = async (event) => {
   
       if (response.ok) {
         console.log('successfully created project!');
+        alert('Successfully created a new project. Please refresh the page to see it on your dashboard.')
       } else {
         alert('Failed to create project');
       }
