@@ -5,28 +5,33 @@
     <button type="button" class="btn btn-primary new-project-btn" data-bs-toggle="modal" data-bs-target="#projectModal">Create New Project</button>
     
 </header>
+{{!-- Charts --}}
+    <div class="tab-content mx-auto my-1 bg-white outline w-50">
+        <figure class="tab-pane fade show active my-1 bg-white" role="tabpanel" aria-labelledby="pills-earnings-tab" id="earnings-chart-tab">
+            <canvas class="mx-auto w-75" id="earningsChart"></canvas>
+        </figure>
+        <figure class="tab-pane fade" id="hours-chart-tab" role="tabpanel" aria-labelledby="pills-hours-tab">
+            <canvas class="mx-auto h-75 w-50" id="hoursChart"></canvas> 
+        </figure>
+    </div> 
+{{!-- /Charts --}}
 
-    <figure class="tab-content mx-auto my-1 bg-white outline w-50">
-        <canvas class="tab-pane fade show active" id="earningsChart" role="tabpanel" aria-labelledby="pills-earnings-tab"></canvas>
-        <canvas class="tab-pane fade mx-auto h-75 w-75" id="hoursChart" role="tabpanel" aria-labelledby="pills-hours-tab"></canvas> 
-    </figure>
-    
-    {{!-- Nav Pills --}}
+{{!-- Nav Pills --}}
     <div class="w-25 mx-auto bg-transparent">
        <ul class="nav nav-pills nav-fill justify-content-center mb-3" id="dash-pills-tab" role="tablist">
             <li class="nav-item w-50 bg-light" role="presentation">
                 <button class="nav-link active" id="pills-earnings-tab" data-bs-toggle="pill"
-                 data-bs-target="#earningsChart" type="button" role="tab" aria-controls="earningsChart" aria-selected="true">Earnings</button>
+                 data-bs-target="#earnings-chart-tab" type="button" role="tab" aria-controls="earnings-chart-tab" aria-selected="true">Earnings</button>
             </li>
             <li class="nav-item w-50 bg-light">
                 <button class="nav-link " id="pills-hours-tab" data-bs-toggle="pill"
-                 data-bs-target="#hoursChart" type="button" role="tab" aria-controls="hoursChart" aria-selected="false">Hours</button>
+                 data-bs-target="#hours-chart-tab" type="button" role="tab" aria-controls="hours-chart-tab" aria-selected="false">Hours</button>
             </li>
         </ul> 
     </div>
-        {{!-- /Nav Pills --}}
+{{!-- /Nav Pills --}}
     
-    <!-- Project Cards List --> 
+{{!-- Project Cards List --}}
     <main class="container bg-transparent">
         <secton id="projectCards" class="row d-flex justify-content-center">
             {{#if allProjects.length}}         
@@ -37,54 +42,56 @@
                 {{/each}}
             {{/if}}
         </secton>
-     </main>   
-        <!-- Modal -->
-        <section class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="projectModalLabel">Create New Project</h5>
-                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="projectForm">
-                            <div class="form-group">
-                                <label for="projectName">Project Name</label>
-                                <input type="text" class="form-control" id="projectName" name="projectName">
-                            </div>
-                            <div class="form-group">
-                                <label for="clientName">Client Name</label>
-                                <input type="text" class="form-input" id="clientName" name="clientName"></input>
-                            </div>
-                            <div class="form-group">
-                                <label for="projectDescription">Project Description</label>
-                                <textarea class="form-input" id="projectDescription" name="projectDescription"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="projectDue">Project Due</label>
-                                <input type="date" class="form-input" id="projectDue" name="projectDue"></input>
-                            </div>
-                            <div class="form-group">
-                                <label for="projectHours">Billable Hours</label>
-                                <input type="number" class="form-input" id="projectHours" name="projectHours"></input>
-                            </div>
-                            <div class="form-group">
-                                <label for="projectRate">Project Rate</label>
-                                <input type="number" class="form-input" id="projectRate" name="projectRate"></input>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" id="saveProject">Save Project</button>
-                            </div>
-                        </form>
-                    </div>
-                    
+     </main>
+{{!-- Project Cards List --}}  
+
+{{!-- Modal --}}
+    <section class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Create New Project</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
+                <div class="modal-body">
+                    <form id="projectForm">
+                        <div class="form-group">
+                            <label for="projectName">Project Name</label>
+                            <input type="text" class="form-control" id="projectName" name="projectName">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientName">Client Name</label>
+                            <input type="text" class="form-input" id="clientName" name="clientName"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDescription">Project Description</label>
+                            <textarea class="form-input" id="projectDescription" name="projectDescription"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDue">Project Due</label>
+                            <input type="date" class="form-input" id="projectDue" name="projectDue"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectHours">Billable Hours</label>
+                            <input type="number" class="form-input" id="projectHours" name="projectHours"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectRate">Project Rate</label>
+                            <input type="number" class="form-input" id="projectRate" name="projectRate"></input>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" id="saveProject">Save Project</button>
+                        </div>
+                    </form>
+                </div>
+                
             </div>
-        </section>
-        <!-- Modal -->
+        </div>
+    </section>
+{{!-- Modal --}}
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
