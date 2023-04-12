@@ -1,4 +1,4 @@
-const dashboardChart = document.getElementById("dashboardChart");
+const ctxEarn = document.getElementById("earningsChart");
 
 const data = [
   { name: "Calc App", wage: 15, hours: 10 },
@@ -7,7 +7,7 @@ const data = [
   { name: "Blog App", wage: 25, hours: 25 },
 ];
 
-new Chart(dashboardChart, {
+new Chart(ctxEarn, {
   type: "bar",
   options: {},
   data: {
