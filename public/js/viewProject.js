@@ -1,5 +1,7 @@
 async function viewProjectHandler() {
-    const response = await fetch('api/project', {
+    console.log("clicked view proj")
+    const projectId = button.dataset.projectId;
+    const response = await fetch(`api/project/${projectId}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     });
