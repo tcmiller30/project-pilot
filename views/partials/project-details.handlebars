@@ -1,10 +1,14 @@
 <section class="card">
     <div class="card mb-3 mx-1 text-center card-outline">
+         <a href="/project/{{id}}"></a>
         <div class="card-header">
-            <h3 class="project-title">{{project.title}}</h3>
+            <h3 class="project-title">{{title}}</h3>
         </div>
         <div class="card-body">
-            <p>{{project.description}}</p>
+            <h4>{{clientName}}</h4>
+            <p>{{description}}</p>
+            <p>Due: {{project_due}}</p>
+            <p>Rate: {{rate}}</p>
             <a href="/project/{{project.id}}"><button class="btn btn-primary ">View Project</button></a>
         </div>
     </div>
