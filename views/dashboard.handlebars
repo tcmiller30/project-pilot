@@ -1,5 +1,5 @@
 <header>
-    <h1 class="text-center">Project Title</h1>
+    <h1 class="header-title text-center">Current Projects</h1>
     {{!-- button to create new project --}}
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal">Create New Project</button>
     <button type="button" class="btn btn-primary logout-btn">Log Out</button>
@@ -12,7 +12,9 @@
     <main class="container bg-transparent">
         <secton id="projectCards" class="row d-flex justify-content-center">
             {{#if allProjects.length}}         
+
                 {{#each allProjects as |project|}}
+                
                     {{> project-details}}
                 {{/each}}
             {{/if}}
