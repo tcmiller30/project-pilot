@@ -10,7 +10,9 @@ const newFormHandler = async (event) => {
     const rate = document.querySelector('#projectRate').value.trim();
   
     // gathers user input for project data and then sends a POST request to the API endpoint
+    console.log({name, clientName, description, dueDate, hours, rate});
     if (name && clientName && description && dueDate && hours && rate) {
+      
       const response = await fetch(`/api/projects`, {
         method: 'POST',
         body: JSON.stringify({ name, clientName, description, dueDate, hours, rate }),
