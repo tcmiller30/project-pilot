@@ -6,6 +6,7 @@ const withAuth = require('../../utils/auth');
 // TODO add authentication check
 router.post('/', async (req, res) => {
     try {
+      console.log(req.body);
       const newProject = await Project.create({
         ...req.body
       });
