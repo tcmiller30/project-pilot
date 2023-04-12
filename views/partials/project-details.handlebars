@@ -7,8 +7,8 @@
         <div class="card-body">
             <h4>{{clientName}}</h4>
             <p>{{description}}</p>
-            <p>Due: {{project_due}}</p>
-            <p>Rate: {{rate}}</p>
+            <p>Due: {{format_date project_due}}</p>
+            <p>Rate: ${{rate}} per hour</p>
             <a href="/project/{{id}}"><button class="btn btn-primary ">View Project</button></a>
         </div>
     </div>
