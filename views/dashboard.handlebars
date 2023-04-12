@@ -1,18 +1,38 @@
 <header>
-    <h1 class="text-center" id="header-title">Project Title</h1>
+
+    <h1 class="header-title text-center">Current Projects</h1>
     {{!-- button to create new project --}}
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectModal">Create New Project</button>
     <button type="button" class="btn btn-primary logout-btn">Log Out</button>
+    <h1 class="page-title mx-auto my-3 p-2 w-25 bg-white outline">Project Pilot</h1>
+    <button type="button" class="btn btn-primary new-project-btn" data-bs-toggle="modal" data-bs-target="#projectModal">Create New Project</button>
+    
 </header>
 
-    <figure class="mx-auto my-1 bg-white outline w-50">
-        <canvas id="dashboardChart"></canvas>
+    <figure class="tab-content mx-auto my-1 bg-white outline w-50">
+        <canvas class="tab-pane fade show active" id="earningsChart" aria-labelledby="pills-earnings-tab"></canvas>
+        <canvas class="tab-pane fade" id="hoursChart" aria-labelledby="pills-hourly-tab"></canvas> 
     </figure>
+    
+    <nav class="w-25 mx-auto bg-white">
+       <ul class="nav nav-pills nav-fill justify-content-center mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item w-50" role="presentation">
+                <button class="nav-link active" id="pills-earnings-tab" data-bs-toggle="pill"
+                 data-bs-target="#earningsChart" type="button" role="tab" aria-controls="earningsChart" aria-selected="true">Earnings</button>
+            </li>
+            <li class="nav-item w-50" role="presentation">
+                <button class="nav-link" id="pills-hourly-tab" data-bs-toggle="pill"
+                 data-bs-target="#hoursChart" type="button" role="tab" aria-controls="hoursChart" aria-selected="false">Hours</button>
+            </li>
+        </ul> 
+    </nav>
+    
     <!-- Project Cards List --> 
     <main class="container bg-transparent">
         <secton id="projectCards" class="row d-flex justify-content-center">
             {{#if allProjects.length}}         
+
                 {{#each allProjects as |project|}}
+                
                     {{> project-details}}
                 {{/each}}
             {{/if}}
@@ -73,4 +93,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <script src="../js/createProject.js"></script>
+   
     <script src="../js/dashboardChart.js"></script>
+    <script src="../js/projectChart.js"></script>
