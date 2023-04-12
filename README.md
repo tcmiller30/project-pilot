@@ -26,8 +26,8 @@ This application is designed for freelancers to have a place to store and track 
 ## Installation
 No installation is required, simply visit the deployed website link:
 <br>
-
-<link>
+[Deployed Project Pilot Link](https://aqueous-scrubland-23639.herokuapp.com/)
+<link >
 
 <br>
 
@@ -35,6 +35,7 @@ No installation is required, simply visit the deployed website link:
 Upon loading the site, users will be prompted to either log in or create a new account. After logging in, a dashboard with all listed projects will be displayed and users will have the option to click on a project for more information, add a new project via the create project button, and log out with the logout button if they wish.  
 
 <br><br><br>
-![alt text](assets/images/readMePhoto.png)
+![alt text](./public/images/loginPhoto.png)
+![alt text](./public/images/dashboardImg.png)
 
 <br>
