@@ -7,6 +7,7 @@ router.get('/', withAuth, async (req, res) => {
 try {
     // Getting the card that shows the project and grabs users name and due date.
     const projectCards = await Project.findAll(   {
+
         attributes: ['id', 'title', 'description', 'clientName', 'project_created', 'project_due', 'hours', 'rate'],
     });
     // Create a new array for all the projects need to add
