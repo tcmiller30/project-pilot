@@ -79,6 +79,11 @@ body{
   top: 10px;
   right: 10px;
 }
+.new-project-btn{
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
 .page-title{
   text-align: center;
   margin: 20px;

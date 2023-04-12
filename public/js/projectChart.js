@@ -1,4 +1,4 @@
-const hoursChart = document.getElementById("projectChart");
+const ctxHour = document.getElementById("hoursChart");
 
 const data = [
   { name: "Project 1", hours: 14 },
@@ -8,7 +8,7 @@ const data = [
   { name: "Project 5", hours: 75 },
 ];
 
-new Chart(hoursChart, {
+new Chart(ctxHour, {
   type: "pie",
   options: {
     responsive: true,
@@ -16,6 +16,10 @@ new Chart(hoursChart, {
     plugins: {
       legend: {
         position: "top",
+      },
+      title: {
+        display: true,
+        text: "Hours Worked",
       },
       scales: {
         y: {
@@ -38,7 +42,7 @@ new Chart(hoursChart, {
           "#c6beb5",
           "#6aa2b8",
           "#555759",
-          " #f78d2d",
+          "#f78d2d",
           "#1b3d6d",
           "#7ab800",
         ],
