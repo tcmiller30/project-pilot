@@ -26,8 +26,8 @@ This application is designed for freelancers to have a place to store and track 
 ## Installation
 No installation is required, simply visit the deployed website link:
 <br>
-
-<link>
+[Deployed Project Pilot Link](https://aqueous-scrubland-23639.herokuapp.com/)
+<link >
 
 <br>
 
