@@ -6,16 +6,15 @@
 
 <div>
    
-
    
-        <figure class="mx-auto bg-white outline w-50">
-        <canvas id="projectChart">
-        </figure>
-        <div class="mx-auto bg-white outline w-50">
+        <div class="card mx-auto bg-white outline w-50">
                 <h4>Client Name: {{clientName}}</h4>
-                <p>Due: {{project_due}}</p>
-                <p>Rate: {{rate}}</p>
+                <p>Due: {{format_date project_due}}</p>
+                <p>Rate: ${{rate}} per hour</p>
+                <p>Hours: ${{hours}}</p>
+
         </div>
+
     <main class="container outline">
         
         <div class="row ">
