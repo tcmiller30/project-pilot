@@ -1,6 +1,6 @@
 const ctxEarn = document.getElementById("earningsChart");
 
-const data = [
+const earningsData = [
   { name: "Calc App", wage: 15, hours: 10 },
   { name: "Weather App", wage: 20, hours: 20 },
   { name: "Todo App", wage: 30, hours: 45 },
@@ -11,11 +11,11 @@ new Chart(ctxEarn, {
   type: "bar",
   options: {},
   data: {
-    labels: data.map((row) => row.name),
+    labels: earningsData.map((row) => row.name),
     datasets: [
       {
         label: "$",
-        data: data.map((row) => row.wage * row.hours),
+        data: earningsData.map((row) => row.wage * row.hours),
         borderWidth: 1,
         backgroundColor: [
           "#c6beb5",

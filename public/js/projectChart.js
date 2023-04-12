@@ -1,6 +1,6 @@
 const ctxHour = document.getElementById("hoursChart");
 
-const data = [
+const hourData = [
   { name: "Project 1", hours: 14 },
   { name: "Project 2", hours: 23 },
   { name: "Project 3", hours: 30 },
@@ -32,11 +32,11 @@ new Chart(ctxHour, {
     },
   },
   data: {
-    labels: data.map((row) => row.name),
+    labels: hourData.map((row) => row.name),
     datasets: [
       {
         label: "Hours Worked",
-        data: data.map((row) => row.hours),
+        data: hourData.map((row) => row.hours),
         borderWidth: 1,
         backgroundColor: [
           "#c6beb5",
