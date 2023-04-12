@@ -7,8 +7,7 @@ router.get('/', withAuth, async (req, res) => {
 try {
     // Getting the card that shows the project and grabs users name and due date.
     const projectCards = await Project.findAll(   {
-        attributes: ['title', 'description', 'clientName', 'project_created'],
-
+        attributes: ['title', 'description', 'clientName', 'project_created', 'id'],
     });
     // Create a new array for all the projects need to add
     const allProjects = projectCards.map((project) => project.get({ plain: true }));
@@ -30,8 +29,9 @@ try {
 // Getting a single card by their id
 router.get('/project/:id', withAuth, async (req, res) => {
  try {
-    const singleProject = await Project.findByPk(req.params.id, {
-        attributes: ['title', 'description', 'project_created', 'clientName', 'project_due', 'hours', 'rate'],
+    const singleProject = await Project.findOne({
+        where: { id: req.params.id},
+        attributes: ['id', 'title', 'description', 'project_created', 'clientName', 'project_due', 'hours', 'rate'],
     });
 
     const project = singleProject.get({ plain: true });
