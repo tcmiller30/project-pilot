@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "dev": "nodemon server.js",
     "seed": "node seeds/seeds.js"
   },
   "repository": {
@@ -29,5 +30,8 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
   },
-  "homepage": "https://github.com/tcmiller30/project-2-repo#readme"
+  "homepage": "https://github.com/tcmiller30/project-2-repo#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
