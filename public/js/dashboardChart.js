@@ -1,12 +1,17 @@
 const ctxEarn = document.getElementById("earningsChart");
 
-const earningsData = [
-  { name: "Calc App", wage: 15, hours: 10 },
-  { name: "Weather App", wage: 20, hours: 20 },
-  { name: "Todo App", wage: 30, hours: 45 },
-  { name: "Blog App", wage: 25, hours: 25 },
-];
-
+fetch("/api/projects")
+  .then((res) => res.json())
+  .then((allProjects) => {
+    const earningsData = [];
+    allProjects.forEach((project) => {
+      earningsData.push({
+        name: project.title,
+        hours: project.hours,
+        rate: project.rate,
+      });
+    });
+// Chart
 new Chart(ctxEarn, {
   type: "bar",
   options: {
@@ -37,7 +42,7 @@ new Chart(ctxEarn, {
     datasets: [
       {
         label: "$",
-        data: earningsData.map((row) => row.wage * row.hours),
+        data: earningsData.map((row) => row.rate * row.hours),
         borderWidth: 1,
         backgroundColor: [
           "#c6beb5",
@@ -50,5 +55,6 @@ new Chart(ctxEarn, {
       },
     ],
   },
-  
+});
+// Chart
 });
