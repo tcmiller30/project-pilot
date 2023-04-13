@@ -1,4 +1,5 @@
 const ctxHour = document.getElementById("hoursChart");
+const { Project } = require("../models/Project");
 
 const hourData = [
   { name: "Project 1", hours: 14 },
