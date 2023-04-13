@@ -1,13 +1,18 @@
-// const { Project } = require("../models");
+// this is the hours chart on the dashboard page
+
 const ctxHour = document.getElementById("hoursChart");
 
-const hourData = [
-  { name: "Project 1", hours: 14 },
-  { name: "Project 2", hours: 23 },
-  { name: "Project 3", hours: 30 },
-  { name: "Project 4", hours: 43 },
-  { name: "Project 5", hours: 75 },
-];
+
+fetch("/api/projects")
+  .then(response => response.json())
+  .then(allProjects => {
+    const hourData = [];
+    allProjects.forEach(project => {
+      hourData.push({
+        name: project.title,
+        hours: project.hours,
+      });
+    });
 
 new Chart(ctxHour, {
   type: "pie",
@@ -57,3 +62,4 @@ new Chart(ctxHour, {
     ],
   },
 });
+  });
