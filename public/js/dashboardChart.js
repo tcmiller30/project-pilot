@@ -1,5 +1,4 @@
 const ctxEarn = document.getElementById("earningsChart");
-const { Project } = require("../models/Project");
 
 const earningsData = [
   { name: "Calc App", wage: 15, hours: 10 },
