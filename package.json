@@ -28,6 +28,7 @@
     "express-session": "^1.17.1",
     "handlebars": "^4.7.6",
     "mysql2": "^2.2.5",
+    "requirejs": "^2.3.6",
     "sequelize": "^6.3.5"
   },
   "homepage": "https://github.com/tcmiller30/project-2-repo#readme",

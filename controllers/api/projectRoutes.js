@@ -18,4 +18,21 @@ router.post('/', async (req, res) => {
     }
   });
 
+  router.get('/', async (req, res) => {
+    try {
+        // Getting project data.
+        const projectChartData = await Project.findAll(   {
+    
+            attributes: ['title','hours','rate'],
+        });
+        // Create a new array for all the projects need to add
+        const allProjectData = projectChartData.map((project) => project.get({ plain: true }));
+        console.log(allProjectData);
+    
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(error);
+    }
+    });
+    
   module.exports = router;

@@ -1,13 +1,25 @@
-// const { Project } = require("../models");
+// pull in data from database
+const projectData = require("../../models");
+
+// import { Project } from "../models.Project.js";
+// const { Project } = require("../../models");
 const ctxHour = document.getElementById("hoursChart");
 
-const hourData = [
-  { name: "Project 1", hours: 14 },
-  { name: "Project 2", hours: 23 },
-  { name: "Project 3", hours: 30 },
-  { name: "Project 4", hours: 43 },
-  { name: "Project 5", hours: 75 },
-];
+// query data from database
+Project.findAll().then((projects) => {
+  const hourData = projects.map((project) => ({
+    name: project.title,
+    hours: project.hours,
+  }));
+// const hourData = [
+//   { name: "Project 1", hours: 14 },
+//   { name: "Project 2", hours: 23 },
+//   { name: "Project 3", hours: 30 },
+//   { name: "Project 4", hours: 43 },
+//   { name: "Project 5", hours: 75 },
+// ];
+
+// render chart
 
 new Chart(ctxHour, {
   type: "pie",
@@ -56,4 +68,5 @@ new Chart(ctxHour, {
       },
     ],
   },
+});
 });
