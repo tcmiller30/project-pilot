@@ -28,11 +28,13 @@ router.post('/', async (req, res) => {
         // Create a new array for all the projects need to add
         const allProjectData = projectChartData.map((project) => project.get({ plain: true }));
         console.log(allProjectData);
-    
-    } catch (error) {
+        res.set('Content-Type', 'application/json');
+        res.status(200).json(allProjectData);
+        } catch (error) {
         console.log(error)
         res.status(500).json(error);
-    }
+  }
+    
     });
     
   module.exports = router;
