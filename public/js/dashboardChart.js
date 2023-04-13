@@ -10,30 +10,9 @@ const earningsData = [
 
 new Chart(ctxEarn, {
   type: "bar",
-  options: {},
-  data: {
-    labels: earningsData.map((row) => row.name),
-    datasets: [
-      {
-        label: "$",
-        data: earningsData.map((row) => row.wage * row.hours),
-        borderWidth: 1,
-        backgroundColor: [
-          "#c6beb5",
-          "#6aa2b8",
-          "#555759",
-          "#f78d2d",
-          "#1b3d6d",
-          "#7ab800",
-        ],
-      },
-    ],
-  },
   options: {
+    responsive: true,
     animation: false,
-    tooltip: {
-      enabled: false,
-    },
     plugins: {
       legend: {
         display: false,
@@ -54,4 +33,23 @@ new Chart(ctxEarn, {
       },
     },
   },
+  data: {
+    labels: earningsData.map((row) => row.name),
+    datasets: [
+      {
+        label: "$",
+        data: earningsData.map((row) => row.wage * row.hours),
+        borderWidth: 1,
+        backgroundColor: [
+          "#c6beb5",
+          "#6aa2b8",
+          "#555759",
+          "#f78d2d",
+          "#1b3d6d",
+          "#7ab800",
+        ],
+      },
+    ],
+  },
+  
 });

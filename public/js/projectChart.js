@@ -1,3 +1,4 @@
+// const { Project } = require("../models");
 const ctxHour = document.getElementById("hoursChart");
 const { Project } = require("../models/Project");
 
@@ -14,6 +15,12 @@ new Chart(ctxHour, {
   options: {
     responsive: true,
     animation: false,
+    layout: {
+      padding: {
+        x: 50,
+        y: 10,
+      },
+    },
     plugins: {
       legend: {
         position: "top",
